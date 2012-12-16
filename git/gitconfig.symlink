@@ -1,0 +1,40 @@
+# Change the [user] section since you are not me :)
+
+[user]
+	name = Jorge Sá Pereira
+	email = jorgesapereira@gmail.com
+[alias]
+	co = checkout
+	st = status
+	mergeleader = merge --no-ff --no-commit
+	wtf = !$DOT/bin/git-wtf
+	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    ri = rebase --interactive --autosquash
+    fa = fetch --all --prune
+[color]
+	branch = auto
+	doff = auto
+	status = auto
+	ui = true
+[core]
+	quotepath = false
+	excludesfile = ~/.gitignore_global
+[apply]
+    whitespace = nowarn
+[difftool]
+	prompt = false
+[mergetool]
+	keepBackup = false
+[help]
+	autocorrect = 1
+[hub]
+    protocol = https
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
